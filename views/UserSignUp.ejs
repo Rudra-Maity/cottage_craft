@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body >
+    <form  action="" class="row g-3 shadow-lg p-3 mb-5 bg-body rounded mt-2" method="post" id="profile" style="width: 95vw; margin-left: 2%;">
+        <div class="col-md-6">
+          <label for="fname" class="form-label">firstName </label>
+          <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lname" class="form-label">lastName</label>
+          <input type="text" class="form-control" id="lname" name="lname" required>
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" name="umail" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="please enter valid email" required >
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" name="upass" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" title="valid password enter" required>
+        </div>
+        <div class="col-md-6">
+          <label for="phnone" class="form-label">phnone No.</label>
+          <input type="tel" class="form-control" id="phnone" name="phno" pattern="[6789][0-9]{9}" title="Please enter valid phone number" required>
+        </div>
+        <div class="col-12">
+         
+          <label for="district" class="form-label">district</label>
+          <input type="text" class="form-control" id="district" placeholder="district of a state" name="district" required>
+          <label for="landmark" class="form-label">landmark</label>
+          <input type="text" class="form-control" id="landmark" placeholder="landmark,area,school" name="landmark" required>
+          <label for="street" class="form-label">street</label>
+          <input type="text" class="form-control" id="street" placeholder="roads" name="street" required>
+        </div>
+        
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name="state">
+            <option value="ANDAMAN & NICOBAR ISLANDS">ANDAMAN & NICOBAR ISLANDS</option>
+            <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
+            <option value="ARUNACHAL PRADESH">ARUNACHAL PRADESH</option>
+            <option value="ASSAM">ASSAM</option>
+            <option value="BIHAR">BIHAR</option>
+            <option value="CHANDIGARH">CHANDIGARH</option>
+            <option value="CHHATTISGARH">CHHATTISGARH</option>
+            <option value="DADRA AND NAGAR HAVELI AND DAMAN AND DIU">DADRA AND NAGAR HAVELI AND DAMAN AND DIU</option>
+            <option value="DELHI">DELHI</option>
+            <option value="GOA">GOA</option>
+            <option value="GUJARAT">GUJARAT</option>
+            <option value="HARYANA">HARYANA</option>
+            <option value="HIMACHAL PRADESH">HIMACHAL PRADESH</option>
+            <option value="JAMMU & KASHMIR">JAMMU & KASHMIR</option>
+            <option value="JHARKHAND">JHARKHAND</option>
+            <option value="KARNATAKA">KARNATAKA</option>
+            <option value="KERALA">KERALA</option>
+            <option value="LADAKH">LADAKH</option>
+            <option value="LASKSHADWEEP">LASKSHADWEEP</option>
+            <option value="MADHYA PRADESH">MADHYA PRADESH</option>
+            <option value="MAHARASHTRA">MAHARASHTRA</option>
+            <option value="MANIPUR">MANIPUR</option>
+            <option value="MEGHALAYA">MEGHALAYA</option>
+            <option value="MIZORAM">MIZORAM</option>
+            <option value="NAGALAND">NAGALAND</option>
+            <option value="ODISHA">ODISHA</option>
+            <option value="PUDUCHERRY">PUDUCHERRY</option>
+            <option value="PUNJAB">PUNJAB</option>
+            <option value="RAJASHAN">RAJASHAN</option>
+            <option value="SIKKIM">SIKKIM</option>
+            <option value="TAMIL NADU">TAMIL NADU</option>
+            <option value="TELANGANA">TELANGANA</option>
+            <option value="TRIPURA">TRIPURA</option>
+            <option value="UTTAR PRADESH">UTTAR PRADESH</option>
+            <option value="UTTARAKHAND">UTTARAKHAND</option>
+            <option value="WEST BENGAL">WEST BENGAL</option>
+        </select>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="pincode" class="form-label">pincode</label>
+          <input type="tel" class="form-control" id="pincode" name="pincode"  required>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+      </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        *{
+            font-size: 108%;
+        }
+        body, h1, p, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the heading */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the form */
+form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#pass{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 2%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+input:focus{
+    /* background-color: chartreuse; */
+    outline: 4px solid rgb(0, 119, 255);
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Forgot Password</h1>
+        <p>Please enter your email address to reset your password.</p>
+        <form action="/api/v1/user/update/forgetPass" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="umail" required>
+            <label for="email">New password:</label>
+            <input type="password" id="pass" name="upass" required>
+            <button type="submit">Reset Password</button>
+        </form>
+    </div>
+</body>
+</html>
+

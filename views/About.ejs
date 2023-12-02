@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .hero{
+            background-color: #f8f8f8;
+            overflow: hidden;
+        }
+        .heading h1{
+            color: #ff6347;
+            font-size: 55px;
+            text-align: center;
+            margin-top: 35px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            margin: 65px auto;
+        }
+        .hero-content{
+            float: 1;
+            width: 600px;
+            margin: 0px 25px;
+            animation: fadeInUp 2s ease;
+        }
+        .hero-content h2{
+            font-size: 38px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        .hero-content p{
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        .hero-content button{
+            display: inline-block;
+            background-color: #ff4500;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .hero-content button:hover{
+            background-color: #ff6347;
+            transform: scale(1.1);
+        }
+        .hero-image{
+            flex: 1;
+            width: 600px;
+            margin: auto;
+            animation: fadeInRight 2s ease;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        @media screen and (max-width: 768px){
+            .heading h1{
+                font-size: 45px;
+                margin-top: 30px;
+            }
+            .hero{
+                margin: 0px;
+            }
+            .container{
+                width: 100%;
+                flex-direction: column;
+                margin: 0px;
+                padding: 0px 40px;
+            }
+            .hero-content{
+                width: 100%;
+                margin: 35px 0px;
+
+            }
+            .hero-content h2{
+                font-size: 30px;
+            }
+            .hero-content p{
+                font-size:10px;
+                margin-bottom: 20px;
+            }
+            .hero-content button{
+                font-size: 16px;
+                padding: 8px 16px;
+            }
+            .hero-image{
+                width: 100%;
+            }
+        }
+        @keyframes fadeInUp {
+            0%{
+                opacity: 0;
+                transform: translate(50px);
+            }
+            100%{
+                opacity: 0;
+                transform: translate(0px);
+            }
+        }
+        @keyframes fadeInRight {
+            0%{
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <section class="Hero">
+        <div class="heading">
+            <h1>About Us</h1>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h2>Welcome To Our Website</h2>
+                <p>Welcome to our website! We are a dedicated team of professionals who are passionate about providing high-quality products and services to our customers.
+
+                    Our mission is to deliver the best possible solutions that meet your needs and exceed your expectations. With years of experience in the industry, we have built a strong reputation for reliability, innovation, and customer satisfaction.
+                    
+                    Whether you're looking for products, services, or information, we are here to assist you every step of the way. Feel free to explore our website and contact us if you have any questions or inquiries. Thank you for choosing us!</p>
+                <button class="cta-button">Learn More</button>
+            </div>
+            <div class="hero-image">
+                <img src="https://media.istockphoto.com/id/1163589059/photo/about-us.jpg?s=612x612&w=0&k=20&c=xiAumkYaKpQc3xepslDpn-lFhYPae6ivX_rRkgSXJgs=">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cottage Craft</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    
+    <style>
+        
+    #profileImage {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #512DA8;
+      font-size: 35px;
+      color: #fff;
+      text-align: center;
+      /* line-height: 150px; */
+      /* margin-right: 30px;
+      margin-bottom: 5%; */
+    }
+
+   
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo"> RANDR</a>
+       
+        <ul class="navbar">
+            <li><a href="#home"> Home</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="/api/v1/user/order">Orders</a></li>
+            <%if(!profileName.fname){%>
+            <li><a href="/api/v1/user/signup">signUp</a></li>
+            <%}%>
+            <li><a href="/contact">contact</a></li>
+            
+        </ul>
+        <div class="nav-button">
+        <%if(!profileName.fname){%>
+            <a href="/api/v1/user/signIn" class="btn1" id="loginBtn">Log In</a>
+            
+            <%}else{%>
+                <a href="/api/v1/user/logOut" class="btn1" id="loginBtn">LogOut</a>
+                <%}%>
+        </div>
+        <div class="header-icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-search' id="search-icon"></i>
+            <a href="/api/v1/user/viewcart">
+                <i class='bx bxs-cart' id="cart-icon"></i>
+            </a>
+           <!-- <a href=""> <i class='bx bx-user' id="user-icon"></i></a> -->
+
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+           <a href="/api/v1/user/profile" id="pro" class="dis" style="text-decoration: none;">
+             <span style="visibility: hidden;" id="firstName"><%=profileName.fname%></span>
+             <span id="lastName" style="visibility: hidden;"><%=profileName.lname%></span>
+             <div id="profileImage"></div>
+           </a>
+        </div>
+       
+  <!-- search -->
+        <form class="search-box" id="q" action="/search/1">
+            <input type="search" name="q" placeholder="search here" >
+        </form>
+
+        <!-- <div class="cart">
+             box1 -->
+            <!-- <div class="box">
+                <img src="/product1.jpeg" alt="">
+                <div class="text">
+                    <h3>PRODUCT</h3>
+                    <span>$50.05</span>
+                    <span>X1</span>
+                </div>
+                <i class='bx bxs-trash-alt'></i>
+            </div>
+           box2 -->
+            <!-- <div class="box">
+                <img src="/product2.jpeg" alt="">
+                <div class="text">
+                    <h3>PRODUCT</h3>
+                    <span>$50.05</span>
+                    <span>X1</span>
+                </div>
+                <i class='bx bxs-trash-alt'></i>
+            </div>
+            <a href="#" class="btn">Checkout</a> --> 
+        <!-- </div> --> 
+
+        <!-- user -->
+
+        <!-- <div class="user">
+            <h2>Login Now</h2>
+            <input type="email" placeholder="Enter Email">
+            <input type="password" placeholder="Enter Password">
+            <input type="submit" value="Login" class="login-btn">
+            <p>Forget Password <a href="#">Reset Now</a></p>
+            <p>Dont't have account <a href="#">Create Now</a></p>
+        </div> -->
+    </header>
+    <section class="home" id="home">
+        <div class="home-text">
+            <span>Shop Now</span>
+            <h1>Welcome to <br>RANDR Product</h1>
+            <a href="#" class="btn">Shop Now</a>
+        </div>
+        <div class="home-img">
+            <img src="https://prompti.ai/wp-content/uploads/2023/02/prompt-Abstract-website-signup-background.webp" alt="">
+        </div>
+    </section>
+    <!-- Cottage craft -->
+    <section  class="category" id="category">
+        <div class="heading">
+            <h1>products</h1> <span>Category</span>
+        </div>
+
+        <div class="swiper new-arrival">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide box">
+                    <img src="https://c1.wallpaperflare.com/preview/189/1002/563/buddha-religion-spiritual-symbol.jpg" alt="">
+                    <div class="content">
+                        <a href="?categories=Category&page=1" class="btn">Category</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="https://shoponline.cottageemporium.in/image/cache/catalog/Furniture/1%20(1)-600x667.JPG" alt="">
+                    <div class="content">
+                        <a href="?categories=Furniture&page=1" class="btn">Furniture</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="https://shoponline.cottageemporium.in/image/cache/catalog/E091D122GA0501004000_A-600x667.JPG" alt="">
+                    <div class="content">
+                        <a href="?categories=Paintings&page=1" class="btn">Paintings</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="https://shoponline.cottageemporium.in/image/cache/catalog/B028d119kn3750001000_A-600x667.JPG" alt="">
+                    <div class="content">
+                        <a href="?categories=Table Linen&page=1" class="btn">Table linen</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="https://shoponline.cottageemporium.in/image/cache/catalog/K183d117fb0312004000_A-600x667.JPG" alt="">
+                    <div class="content">
+                        <a href="?categories=Silk Carpet&page=1" class="btn">Silk Carpet</a>
+                    </div>
+                </div>
+                <div class="swiper-slide box">
+                    <img src="https://shoponline.cottageemporium.in/image/cache/catalog/S903d119ea0040028000_A-600x667.JPG" alt="">
+                    <div class="content">
+                        <a href="?categories=Woollen Carpet&page=1" class="btn">woolen Carpet</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="https://shoponline.cottageemporium.in/image/cache/catalog/R%20Carpet/M534d119ea0013001000_A-600x667-600x667.jpg" alt="">
+                    <div class="content">
+                        <a href="?categories=Zardozi Carpet&page=1" class="btn">Zardozi Carpet</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide box">
+                    <img src="https://elementcottage.com/cdn/shop/products/hc0008.1.authentic.carpetbag.beige_5000x.jpg?v=1507769438" alt="">
+                    <div class="content">
+                        <a href="?categories=Folders and Bags&page=1" class="btn">Bags</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- CATEGORY -->
+<!-- <section class="category" id="category">
+    <div class="heading">
+        <h1>Products <span>Category</span></h1>
+    </div>
+    <div class="category-container">
+        <div class="box">
+            <img src="/img/cate1.jpeg" alt="">
+            <div class="content">
+                <h2>Furniture</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/img/cate2.jpeg" alt="">
+            <div class="content">
+                <h2>Paintings</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/img/cate3.jpeg" alt="">
+            <div class="content">
+                <h2>Table Linen</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/img/cate4.avif" alt="">
+            <div class="content">
+                <h2>Lamps</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/img/cate5.jpeg" alt="">
+            <div class="content">
+                <h2>Slik Carpet</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/img/cate6.jpeg" alt="">
+            <div class="content">
+                <h2>Woolen Carpet</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="/img/cate7.jpg" alt="">
+            <div class="content">
+                <h2>Zardozi Carpet</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="cate8.jpg" alt="">
+            <div class="content">
+                <h2>Bags</h2>
+                <p>Upto 45% off</p>
+                <a href="#" class="btn"> Shop Now </a>
+            </div>
+        </div>
+    </div>
+
+</section> -->
+
+    <!-- RANDR PRODUCT -->
+
+    <section class="products" id="products">
+        <div class="heading">
+            <h1>RANDER <span>Products</span></h1>
+        </div>
+        <div class="product-container">
+            <%products.forEach(element => {%>
+        <div class="box">
+            <img src="data:<%= element.images[0].contentType %>;base64, <%= element.images[0].data.toString('base64') %>" alt="<%= element.images[0].imgname %>" alt="">
+            <div class="content">
+                <h2><%=element.name%></h2>
+                
+
+                <div class="stars">
+                    <div class="stars">
+                        <% for(let i=0; i < element.rating; i++) { %>
+                            <i class='bx bxs-star'></i>
+
+                        <% } %>
+                        <i class='bx bxs-star-half'></i>
+                    </div>
+                    
+                </div>
+                <span>  &#x20B9;<%=element.price%></span>
+                <a target="_blank" href="/api/v1/product/<%= element.pid %>">
+                <i class='bx bx-cart-alt' ></i></a>
+            </div>
+        </div>
+        <% })%>
+        
+        </div>
+    </div>
+    </section>
+
+    <!-- REVIEW SECTION -->
+
+    <section class="reviews" id="reviews">
+        <div class="heading">
+            <h1>Customer <span>REVIEWS</span></h1>
+            </div>
+            <div class="reviews-container">
+            <div class="box">
+                <img src="/img/img-rate1.jpeg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tempora .<h2>Subhas Das</h2>
+                </p>
+            </div>
+
+            <div class="box">
+                <img src="/img/img-rate2.jpeg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tempora .<h2>Subhas Das</h2>
+                </p>
+            </div>
+
+            <div class="box">
+                <img src="/img/img-rate3.jpeg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tempora .<h2>Subhas Das</h2>
+                </p>
+            </div>
+
+            <div class="box">
+                <img src="/img/img-rate4.jpeg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tempora .<h2>Subhas Das</h2>
+                </p>
+            </div>
+
+            <div class="box">
+                <img src="/img/img-rate5.jpeg" alt="">
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, tempora .<h2>Subhas Das</h2>
+                </p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+    <!-- FOOTER SECTION -->
+    <div id="footer"></div>
+
+    <script>
+    
+        $(document).ready(function () {
+          var firstName = $('#firstName').text();
+          var lastName = $('#lastName').text();
+          if(firstName && lastName){
+          var intials = $('#firstName').text().charAt(0) + $('#lastName').text().charAt(0);
+          var profileImage = $('#profileImage').text(intials);
+          }
+          else{
+            $('#profileImage').html(`<a href="/api/v1/user/profile"> <i class='bx bx-user' id="user-icon"></i></a>`)
+          }
+        });
+        
+      </script>
+
+<section class="footer">
+    <div class="footer-box">
+        <h2>RANDR</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae exercitationem maxime
+             dicta recusandae ex. Odio modi deserunt nisi obcaecati blanditiis?</p>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram' ></i></a>
+            <a href="#"><i class='bx bxl-tiktok' ></i></a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <h3>Support</h3>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Help $ Support</a></li>
+        <li><a href="#">Return Policy</a></li>
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">FAQ</a></li>
+    </div>
+    <div class="footer-box">
+        <h3>Our Branches</h3>
+        <li><a href="#">India</a></li>
+        <li><a href="#">Japan</a></li>
+        <li><a href="#">America</a></li>
+        <li><a href="#">Australia</a></li>
+        <li><a href="#">Nepal</a></li>
+    </div>
+    <div class="footer-box">
+        <h3>Payment Method</h3>
+        <div class="payment">
+            <img src="/payment/ame-express.png" alt="">
+            <img src="/payment/mastercard.png" alt="">
+            <img src="/payment/paypal.png" alt="">
+            <img src="/payment/visa.png" alt="">
+    
+        </div>
+    </div>
+    </section>
+    
+    <!-- COPYRIGHT -->
+    <div class="copyright">
+    <p>&#169; Carpoolvanom All right Reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- link to  js -->
+    <script src="/main.js"></script>
+</body>
+
+</html>

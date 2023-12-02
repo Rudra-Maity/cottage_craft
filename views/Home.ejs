@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+
+  <style>
+    nav {
+      box-shadow: 0 4px 6px 0 rgba(255, 251, 251, 0.403), 0 3px 16px 0 rgba(210, 206, 206, 0.582);
+    }
+
+    .sideSearch {
+      display: none;
+      /* visibility: collapse; */
+    }
+    
+
+    #profileImage {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #512DA8;
+      font-size: 35px;
+      color: #fff;
+      text-align: center;
+      /* line-height: 150px; */
+      margin-right: 30px;
+      margin-bottom: 5%;
+    }
+
+    #pro {
+      cursor: pointer;
+    }
+#pro:hover{
+  color: red;
+}
+p:hover{color: rgb(3, 55, 198);}
+.card-title:hover{color: blue;}
+/* .h5:hover{color: blue;} */
+    /* Styles for tablets (landscape and portrait) */
+    @media screen and (max-width: 724px) {
+
+      .dis {
+        display: none;
+      }
+
+    }
+
+    /* Styles for mobile devices (portrait) */
+    @media screen and (max-width: 458px) {
+
+      .navSearch {
+        display: none;
+      }
+
+      .sideSearch {
+        display: flex;
+        visibility: visible;
+      }
+
+      #profile {
+        display: flex;
+        visibility: visible;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class=" navbar navbar-dark bg-dark  text-bg-dark p-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        logo
+      </a>
+
+      <!-- search  -->
+      <form class="d-flex mt-2 navSearch" role="search">
+        <input class="form-control me-2 navSearch" type="search" placeholder="Search" aria-label="Search"
+          data-bs-toggle="modal" data-bs-target="#myModal" style="font-size:24px;">
+      </form>
+
+
+      <div class="modal" id="myModal">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header ">
+              <div class="form-group form-group-lg">
+
+                <form class="d-flex mt-2 navSearch" role="search"  id="q" action="/search/1" >
+                  <input name="q" style="border-top: none;    
+                    border-left: none;  
+                    border-right: none;  
+                    border-radius: 0;    
+                    outline: none;       
+                    box-shadow: none; width: 63vw;" class="form-control navSearch" type="search" placeholder="Search"
+                    aria-label="Search">
+                  <button class=" btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <a href="/api/v1/user/viewcart">
+
+        <svg style="width: 26px; height: 26px; margin-left: 40px;" xmlns="http://www.w3.org/2000/svg" width="18"
+          height="18" fill="currentColor" class="bi bi-cart bg-white bg-gradient ml-6 dis" viewBox="0 0 16 16">
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </svg>
+      </a>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <a href="/api/v1/user/profile" id="pro" class="dis" style="text-decoration: none;">
+        <span style="visibility: hidden;" id="firstName"><%=profileName.fname%></span>
+        <span id="lastName" style="visibility: hidden;"><%=profileName.lname%></span>
+        <div id="profileImage"></div>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">logs</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form action="/search/1" class="d-flex mt-2 " role="search" id="sideSearch">
+            <input name="q"  class="form-control me-2 sideSearch type="search" placeholder="Search" aria-label="Search" data-bs-toggle="modal" data-bs-target="#myModal"
+            style="font-size:24px;">
+            <!-- <button class="navSearch btn btn-success" type="submit">Search</button> -->
+          </form>
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/v1/user/viewcart">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact Us</a>
+            </li>
+            <li id="profile" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/api/v1/user/profile" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Profile
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="/api/v1/user/profile">Update Profile and address</a></li>
+                <li><a class="dropdown-item" href="/api/v1/user/signup">SignUp</a></li>
+
+                <li><a class="dropdown-item" href="/api/v1/user/signIn">Sign In</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/api/v1/user/logOut">LogOut</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Become seller</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/api/v1/user/order" target="_blank">Orders</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- category slider -->
+  <div style="margin-top: 1%;" id="demo" class=" carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="4"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="5"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="6"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="7"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="8"></button>
+    </div>
+
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="?categories=Category&page=1" target="_blank">
+          <img src="https://img.freepik.com/premium-photo/skilled-lady-drawing-ceramic-bowl_973350-94.jpg?w=740" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+      <div class="carousel-item">
+        <a href="?categories=Furniture&page=1" target="_blank">
+          <img src="https://img.freepik.com/free-photo/close-up-engraving-art-tools_23-2149186789.jpg?w=740&t=st=1698497969~exp=1698498569~hmac=64117a175542518611bb1d72ca52e67af501aacfd0e5f07139766b1431d5e0a8" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+
+      <div class="carousel-item ">
+        <a href="?categories=Paintings&page=1" target="_blank">
+          <img src="https://img.freepik.com/premium-photo/concept-drawing-woman-draw-painting-with-sunflowers_185193-85451.jpg?w=740" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+      
+      
+      <div class="carousel-item ">
+        <a href="?categories=Table Linen&page=1" target="_blank">
+          <img src="https://img.freepik.com/free-photo/green-sticks-wooden-balls_23-2147677825.jpg?w=360&t=st=1698498949~exp=1698499549~hmac=248cc8ba2234aa80d5f8002fea3166fcc092c241ebbe5991aa50a47e8340d841" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+      
+      <div class="carousel-item ">
+        <a href="?categories=Lamps&page=1" target="_blank">
+          <img src="https://img.freepik.com/free-photo/ornate-lantern-glows-vibrant-christmas-celebration-generated-by-ai_188544-14447.jpg?w=740&t=st=1698499213~exp=1698499813~hmac=29815d63d66c6ad934da8859cfa8e96d3cf80f30c30e7ab7763ffcbe31c2862a" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+      
+      <div class="carousel-item ">
+        <a href="?categories=Silk Carpet&page=1" target="_blank">
+          <img src="https://as2.ftcdn.net/v2/jpg/06/41/50/17/1000_F_641501791_bVWjHINrHJNp1Z77Rm79HCTXMjRnFV6G.jpg" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+
+      <div class="carousel-item ">
+        <a href="?categories=Woollen Carpet&page=1" target="_blank">
+          <img src="https://img.freepik.com/premium-photo/many-carpets-with-different-patterns-closeup_392895-231418.jpg?w=740" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+
+      <div class="carousel-item ">
+        <a href="?categories=Zardozi Carpet&page=1" target="_blank">
+          <img src="https://img.freepik.com/premium-photo/rug_632261-18627.jpg?w=740" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+
+      <div class="carousel-item ">
+        <a href="?categories=Folders and Bags&page=1" target="_blank">
+          <img src="https://img.freepik.com/free-photo/woman-taking-shopping-bag-from-counter_23-2147784119.jpg?w=740&t=st=1698500385~exp=1698500985~hmac=28016134ac136b4914380f5f199528fcd2209e4f7484836aa6c480efd84c3293" alt="Los Angeles" class="d-block"
+            style="width:100%;height: 50%;">
+        </a>
+      </div>
+
+      
+
+      
+    </div>
+
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <!-- cards for items  -->
+
+  <div class="row mt-3">
+    <%products.forEach(element => {%>
+      
+   
+    <div class="col-sm-3">
+      <div class="card">
+        <img class="card-img-top" src="data:<%= element.images[0].contentType %>;base64, <%= element.images[0].data.toString('base64') %>" alt="<%= element.images[0].imgname %>">
+        <div class="card-body">
+          <a class="text-decoration-none text-dark" href="/api/v1/product/<%= element.pid %>" target="_blank">
+            <h5 class="card-title"><%=element.title%></h5>
+            <p class="card-text"><%=element.name%></p>
+          </a>
+          <p class="h5 text-primary"><%=element.price%></p>
+          <p class="h4 text-success"><%=element.rating%></p>
+        </div>
+      </div>
+    </div>
+    <% })%>
+  </div>
+  <!-- footer  -->
+  <div class="container" id="footer">
+    <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+      <div class="col mb-3">
+        <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+        </a>
+        <p class="text-muted">&copy; 2023</p>
+      </div>
+
+      <div class="col mb-3">
+
+      </div>
+
+      <div class="col mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column col">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col mb-3">
+        <h5>Section</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+          <li class="nav-item mb-2"><a href="/about" class="nav-link p-0 text-muted">About</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script>
+    
+    $(document).ready(function () {
+      var firstName = $('#firstName').text();
+      var lastName = $('#lastName').text();
+      if(firstName && lastName){
+      var intials = $('#firstName').text().charAt(0) + $('#lastName').text().charAt(0);
+      var profileImage = $('#profileImage').text(intials);
+      }
+      else{
+        $('#profileImage').html(`<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+  <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+</svg>`)
+      }
+    });
+    
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</body>
+
+</html>
