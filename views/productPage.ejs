@@ -20,6 +20,14 @@
             width: 100%;
             box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.3); /* Add shadow to the bottom */
         }
+        table{
+          display: block;
+          width: auto;
+          overflow: auto;
+        }
+        nav{
+          position:fixed;
+        }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -190,9 +198,9 @@
       <!-- buy now -->
     
       <div class="fixed-bottom full-width-card" >
-        <div class="card custom-card ">
+        <div class="card custom-card " >
             <!-- <div class="card-body "> -->
-              <div class="row ">
+              <div class="row " >
                   <%if(addCart){%>
                     <a href="/api/v1/user/cart?cartItem=<%=doc.pid%>" class="col-md-6 btn btn-warning " type="button" >
                         <h3>Cart Now</h3>

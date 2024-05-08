@@ -53,21 +53,21 @@
                 <a href="/api/v1/user/logOut" class="btn1" id="loginBtn">LogOut</a>
                 <%}%>
         </div>
+        <i class='bx bx-search' id="search-icon"></i>
         <div class="header-icons">
             <i class='bx bx-menu' id="menu-icon"></i>
-            <i class='bx bx-search' id="search-icon"></i>
             <a href="/api/v1/user/viewcart">
                 <i class='bx bxs-cart' id="cart-icon"></i>
             </a>
            <!-- <a href=""> <i class='bx bx-user' id="user-icon"></i></a> -->
 
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-           <a href="/api/v1/user/profile" id="pro" class="dis" style="text-decoration: none;">
-             <span style="visibility: hidden;" id="firstName"><%=profileName.fname%></span>
-             <span id="lastName" style="visibility: hidden;"><%=profileName.lname%></span>
-             <div id="profileImage"></div>
-           </a>
         </div>
+        <a href="/api/v1/user/profile" id="pro" class="dis" style="text-decoration: none;">
+          <span style="visibility: hidden;" id="firstName"><%=profileName.fname%></span>
+          <span id="lastName" style="visibility: hidden;"><%=profileName.lname%></span>
+          <div id="profileImage"></div>
+        </a>
        
   <!-- search -->
         <form class="search-box" id="q" action="/search/1">
