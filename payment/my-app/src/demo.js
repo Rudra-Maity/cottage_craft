@@ -28,8 +28,8 @@ class MyComponent extends React.Component {
     if (value === "online_payment") {
 
       //  let param=new useParams() 
-      alert('http://localhost:2000/payment/pay/' + pid)
-      fetch('http://localhost:2000/user/payment/pay/' + pid + '/' + value) // Replace with your API endpoint
+     // alert('http://localhost:2000/payment/pay/' + pid)
+      fetch('https://cottage-craft.onrender.com/user/payment/pay/' + pid + '/' + value) // Replace with your API endpoint
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -45,8 +45,8 @@ class MyComponent extends React.Component {
         });
     }
     else if (value === "COD") {
-      alert('http://localhost:2000/user/payment/pay/' + pid + '/' + value)
-      fetch('http://localhost:2000/user/payment/pay/' + pid+'/' + value)
+      //alert('http://localhost:2000/user/payment/pay/' + pid + '/' + value)
+      fetch('https://cottage-craft.onrender.com/user/payment/pay/' + pid+'/' + value)
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');

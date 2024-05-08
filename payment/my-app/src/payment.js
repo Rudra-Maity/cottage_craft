@@ -17,7 +17,7 @@ function RazPayment(data, pid) {
                 rcp_id: data.receipt
             }
             console.log("second", paymentInfo);
-            fetch('http://localhost:2000/user/payment/pay/result/' + pid + '/' + data.id, {
+            fetch('https://cottage-craft.onrender.com/user/payment/pay/result/' + pid + '/' + data.id, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
