@@ -193,7 +193,7 @@ const signupForm= document.getElementById('Login').addEventListener("click",(e)=
         // For this example, let's just display the data in an alert
         alert(JSON.stringify(adminData));
 
-        fetch('http://localhost:2000/api/v1/admin/signIn',adminData)
+        fetch('/api/v1/admin/signIn',adminData)
         .then((res)=>{
             if(!res.ok) window.location.replace("*")
             return res.json()
